@@ -1,0 +1,6 @@
+# Debug output left in source files.
+RULE_DESC="console.log and console.debug calls left in JavaScript and TypeScript source"
+RULE_SEVERITY="low"
+RULE_GLOB="*.ts *.tsx *.js *.jsx"
+RULE_PATTERN='console\.(log|debug)\('
+RULE_FIX_HINT="remove the call, or replace it with the logger your project uses"

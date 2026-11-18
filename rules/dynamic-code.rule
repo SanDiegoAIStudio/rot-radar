@@ -1,0 +1,7 @@
+# Calls that run text as code. The leading character class leaves out method
+# calls such as regex.exec( and names such as my_exec(.
+RULE_DESC="Calls to eval or exec, which run text as code"
+RULE_SEVERITY="high"
+RULE_GLOB="*.py *.ts *.tsx *.js *.jsx"
+RULE_PATTERN='(^|[^.$[:alnum:]_])(eval|exec)\('
+RULE_FIX_HINT="parse data with a real parser such as JSON.parse or ast.literal_eval, or use a dispatch table"

@@ -1,0 +1,6 @@
+# A bare except clause catches every exception, KeyboardInterrupt included.
+RULE_DESC="Python bare 'except:' clauses, which swallow every error including Ctrl-C"
+RULE_SEVERITY="high"
+RULE_GLOB="*.py"
+RULE_PATTERN='^[[:space:]]*except[[:space:]]*:'
+RULE_FIX_HINT="catch the specific exception you expect; a bare except hides bugs and blocks Ctrl-C"

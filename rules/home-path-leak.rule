@@ -1,0 +1,8 @@
+# A committed absolute path to a home folder names a person and a machine, and
+# breaks on every other machine. The pattern is written with a group so that
+# this file never holds a literal home path itself.
+RULE_DESC="Absolute home folder paths committed to the repository"
+RULE_SEVERITY="high"
+RULE_GLOB="*.md *.ts *.tsx *.js *.jsx *.json *.py *.sh *.yml *.yaml *.toml"
+RULE_PATTERN='/(Users|home)/[A-Za-z0-9._-]+/'
+RULE_FIX_HINT="replace the path with $HOME or a setting"

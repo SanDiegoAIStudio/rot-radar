@@ -1,0 +1,11 @@
+# Shell lines that throw error output away without saying what is hidden.
+# Same three forms and the same exemption as hunt.sh: a line that ends with a
+# comment starting "hides:" followed by a reason is not counted.
+# The pattern uses [ \t] and not \s for the gaps: git grep lets \s run across a
+# line break, so a trailing "# hides:" with no reason would take the first
+# character of the next line as its reason and wrongly exempt the line.
+RULE_DESC="Shell lines that send error output to the null device without a '# hides:' comment"
+RULE_SEVERITY="high"
+RULE_GLOB="*.sh *.bash *.zsh *.ksh *.cron *.crontab crontab"
+RULE_PATTERN='^(?!.*#[ \t]*hides:[ \t]*\S).*(2>>?[ \t]*/dev/null|&>>?[ \t]*/dev/null|>>?[ \t]*/dev/null[ \t]+2>&1)'
+RULE_FIX_HINT="log the output to a file someone reads, or end the line with a comment that starts '# hides:' and names what it hides"

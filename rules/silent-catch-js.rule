@@ -1,0 +1,8 @@
+# An empty catch block throws the error away. The binding in parentheses is
+# optional, so catch {} with no binding counts too; the word boundary keeps out
+# names that end in catch.
+RULE_DESC="Empty catch blocks in JavaScript and TypeScript, which swallow errors silently"
+RULE_SEVERITY="high"
+RULE_GLOB="*.ts *.tsx *.js *.jsx"
+RULE_PATTERN='\bcatch[[:space:]]*(\([^)]*\))?[[:space:]]*\{[[:space:]]*\}'
+RULE_FIX_HINT="log or handle the error; an empty catch hides failures"

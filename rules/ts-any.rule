@@ -1,0 +1,6 @@
+# The any type switches off type checking for the value it labels.
+RULE_DESC="TypeScript ': any' annotations, which switch off type checking"
+RULE_SEVERITY="med"
+RULE_GLOB="*.ts *.tsx"
+RULE_PATTERN=':[[:space:]]*any\b'
+RULE_FIX_HINT="use a precise type, unknown plus a check, or a generic"
